@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Microsoft.FluentUI.AspNetCore.Components;
+
 
 namespace Microsoft_Ads_API_Helper
 {
@@ -12,6 +14,7 @@ namespace Microsoft_Ads_API_Helper
             builder.RootComponents.Add<HeadOutlet>("head::after");
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+            builder.Services.AddFluentUIComponents();
 
             await builder.Build().RunAsync();
         }
